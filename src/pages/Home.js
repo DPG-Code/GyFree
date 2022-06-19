@@ -1,5 +1,7 @@
 import { Link, useLocation } from "wouter"
 import { useState } from "react"
+import { useGifs } from "../hooks/useGifs"
+import GifList from '../components/GifList'
 
 const POPULAR_GIFS = ['valorant', 'rick', 'league of legends']
 
@@ -7,11 +9,12 @@ function Home () {
     const [keyword, setKeyword] = useState('')
     const [path, pushLocation] = useLocation()
 
+    const {loading, gifs} = useGifs()
+
     const handleSubmit = (e) => {
         e.preventDefault()
         pushLocation(`/search/${keyword}`)
     }
-
     const handleChange = (e) => {
         setKeyword(e.target.value)
     }
@@ -21,6 +24,8 @@ function Home () {
             <form onSubmit={handleSubmit}>
                 <input onChange={handleChange} type="text" value={keyword}/>
             </form>
+            <h3>Gifs recientes</h3>
+            <GifList gifs={gifs}/>
             <h3>Gifs mas populares</h3>
             <ul>
             {

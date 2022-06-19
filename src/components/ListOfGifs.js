@@ -1,5 +1,5 @@
-import Gif from "./Gif"
 import { useGifs } from '../hooks/useGifs';
+import GifList from "./GifList";
 
 export default function ListOfGifs ({params}) {
     const {keyword} = params
@@ -10,7 +10,7 @@ export default function ListOfGifs ({params}) {
       <>
         { loading
         ? <p>Cargando...</p>
-        : gifs.map(singleGif => <Gif key={singleGif.id} title={singleGif.title} url={singleGif.url} id={singleGif.id}/>)
+        : <GifList gifs={gifs} />
         }
       </>
     )
