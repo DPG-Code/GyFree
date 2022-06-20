@@ -1,0 +1,44 @@
+.gif-detail{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    .gif-detail img{
+        width:auto;
+        height: auto;
+        border-radius: 10px;
+        }
+    .info{
+        padding-left: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        }
+        .info h3{
+            margin: 15px 0;
+            color: #ffffff;
+            }
+        .info input{
+            padding: 5px 10px;
+            width: 250px;
+            color: #ffffff8c;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            outline: none;
+            }
+        .info p{
+            margin: 15px 0;
+            color: #ffffff;
+            }
+
+@media only screen and (min-width : 800px) {
+    .gif-detail{
+        flex-direction: row;
+        }
+}

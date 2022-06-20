@@ -1,9 +1,18 @@
 import useGlobalGifs from '../hooks/useGlobalGifs'
-import Gif from '../components/Gif'
+import './Detail.css'
 
 export default function Detail({params}){
     const gifs = useGlobalGifs()
     const gif = gifs.find(singleGif => singleGif.id === params.id)
     
-    return <Gif title={gif.title} id={gif.id} url={gif.url}/>
+    return (
+        <div className='gif-detail'>
+            <img src={gif.url} alt={gif.title} />
+            <div className='info'>
+                <h3>{gif.title}</h3>
+                <input type='text' value={gif.url}/>
+                <p>{gif.id}</p>
+            </div>
+        </div>
+    )
 }
