@@ -1,8 +1,9 @@
 import Gif from "./Gif";
+import './GifList.css'
 
 export default function GifList({gifs}) {
     return (
-        <div>
+        <section className="gifs">
             {
             gifs.map(({id, title, url}) =>
                 <Gif
@@ -13,6 +14,6 @@ export default function GifList({gifs}) {
                 />
             )
             }
-        </div>
+        </section>
     )
 }

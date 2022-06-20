@@ -11,7 +11,7 @@ function App() {
   return (
     <StaticContext.Provider value={{name : 'Daniel Prieto', suscribe : true}}>
       <div className="App">
-        <Link to="/">Home</Link>
+        <Link className='home' to="/">Home</Link>
         <GifsContextProvider>
           <Route path="/" component={Home} />
           <Route path="/search/:keyword" component={ListOfGifs} />

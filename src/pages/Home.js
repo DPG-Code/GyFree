@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter"
 import { useState } from "react"
 import { useGifs } from "../hooks/useGifs"
 import GifList from '../components/GifList'
+import './Home.css'
 
 const POPULAR_GIFS = ['valorant', 'rick', 'league of legends']
 
@@ -21,12 +22,14 @@ function Home () {
 
     return (
         <section className="App-container">
+            <h1>GiFree</h1>
+            <p className="description">Encontraras gifs de lo que imagines!</p>
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type="text" value={keyword}/>
+                <input onChange={handleChange} type="text" value={keyword} placeholder="Buscar gifs"/>
             </form>
-            <h3>Gifs recientes</h3>
+            <h3 className="recientes">Gifs recientes</h3>
             <GifList gifs={gifs}/>
-            <h3>Gifs mas populares</h3>
+            <h3 className="populares">Gifs mas populares</h3>
             <ul>
             {
             POPULAR_GIFS.map((popularGif) => (
