@@ -1,4 +1,4 @@
-import useGlobalGifs from '../hooks/useGlobalGifs'
+import useGlobalGifs from 'hooks/useGlobalGifs'
 import './Detail.css'
 
 export default function Detail({params}){

@@ -1,15 +1,13 @@
-import { Link, useLocation } from "wouter"
+import { useLocation } from "wouter"
 import { useState } from "react"
-import { useGifs } from "../hooks/useGifs"
-import GifList from '../components/GifList'
+import { useGifs } from "hooks/useGifs"
+import GifList from 'components/GifList'
+import TrendinsSearches from "components/TrendingSearch/TrendingSearches"
 import './Home.css'
-
-const POPULAR_GIFS = ['valorant', 'rick', 'league of legends']
 
 function Home () {
     const [keyword, setKeyword] = useState('')
     const [path, pushLocation] = useLocation()
-
     const {loading, gifs} = useGifs()
 
     const handleSubmit = (e) => {
@@ -29,16 +27,7 @@ function Home () {
             </form>
             <h3 className="recientes">Gifs recientes</h3>
             <GifList gifs={gifs}/>
-            <h3 className="populares">Gifs mas populares</h3>
-            <ul>
-            {
-            POPULAR_GIFS.map((popularGif) => (
-                <li key={popularGif}>
-                    <Link to={`/search/${popularGif}`}>Gif de {popularGif}</Link>
-                </li>
-            ))
-            }
-            </ul>
+            <TrendinsSearches />
         </section>
     )
 
