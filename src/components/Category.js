@@ -1,8 +1,9 @@
 import { Link } from "wouter"
+import './Category.css'
 
 export default function Category({ name, options = [] }){
     return (
-        <section>
+        <section className='trending-container'>
             <h3>{name}</h3>
             <ul>
                 {

@@ -1,5 +1,6 @@
 import { useGifs } from 'hooks/useGifs';
 import GifList from "./GifList";
+import './ListOfGifs.css'
 
 export default function ListOfGifs ({params}) {
     const {keyword} = params
@@ -10,15 +11,15 @@ export default function ListOfGifs ({params}) {
     }
 
     return (
-      <>
+      < section className='result-search'>
         { loading
         ? <p>Cargando...</p>
         : <>
-            <h3>{decodeURI(keyword)}</h3>
+            <h3 className='title-results'>{decodeURI(keyword)}</h3>
             <GifList gifs={gifs} />
           </>
         }
-        <button onClick={handleNextPage}>Next Page</button>
-      </>
+        <button className='load-more' onClick={handleNextPage}>Load More</button>
+      </ section>
     )
 }

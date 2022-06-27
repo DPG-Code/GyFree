@@ -1,0 +1,31 @@
+.trending-container{
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.trending-container h3{
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: #ffffff;
+}
+.trending-container ul{
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 5px;
+    }
+    .trending-container ul li{
+        margin: 0;
+        }
+        .trending-container ul li a{
+            padding: 5px 10px;
+            font-size: 12px;
+            color: #ffffffa4;
+            background-color: #ffffff13;
+            border-radius: 15px;
+            text-decoration: none;
+        }
