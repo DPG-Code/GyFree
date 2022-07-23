@@ -10,7 +10,7 @@ export default function getGifs ({limit = 25, keyword = 'morty', page = 0} = {})
     if (Array.isArray(data)) {
       const gifs = data.map(image => {
           const {images, title, id} = image
-          const {url} = images.fixed_height_small
+          const {url} = images.downsized_medium
           return {title, id, url}
       })
       return gifs

@@ -1,17 +1,23 @@
 import { useState, useEffect, useRef } from "react"
 
-export function useNearScreen ({ distance = '100px' } = {}) {
+export function useNearScreen ({ distance = '100px', externalRef, once = true } = {}) {
     const fromRef = useRef()
     const [isNearScreen, setShow] = useState(false)
-    
+
     useEffect(function(){
         let observer
+
+        const element = externalRef ? externalRef.current : fromRef.current
+
         const onChange = (entries, observer) => {
-            const element = entries[0]
-            if (element.isIntersecting){
+            const el = entries[0]
+            if (el.isIntersecting){
                 setShow(true)
                 // observer.unobserve(element) --> Para dejar de ver arriba y abajo
-                observer.disconnect()
+                once && observer.disconnect()
+            }
+            else {
+                !once && setShow(false)
             }
         }
 
@@ -23,8 +29,10 @@ export function useNearScreen ({ distance = '100px' } = {}) {
             observer = new IntersectionObserver(onChange, {
                 rootMargin : distance
             })
-    
-            observer.observe(fromRef.current)
+
+            if(element) {
+                observer.observe(element)
+            }
         })
 
         return () => observer && observer.disconnect()

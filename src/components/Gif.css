@@ -1,12 +1,11 @@
-a{
-    width: auto;
-    height: auto;
+.Gif{
+    width: 100%;
     display: flex;
     position: relative;
     border-radius: 5px;
     overflow: hidden;
     }
-    a h4{
+    .Gif span{
         padding: 2.5px;
         font-size: 10px;
         color: #ffffff;
@@ -15,4 +14,8 @@ a{
         position: absolute;
         bottom: 0;
         left: 0;
+    }
+    .Gif img{
+        width: 100%;
+        object-fit: cover;
     }

@@ -3,8 +3,8 @@ import './Gif.css'
 
 export default function Gif ({title, id, url}) {
     return (
-        <Link to={`/gif/${id}`}>
-            <h4>{title}</h4>
+        <Link className='Gif' to={`/gif/${id}`}>
+            <span>{title}</span>
             <img src={url} alt={title}/>
         </Link>
     )

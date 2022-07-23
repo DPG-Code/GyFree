@@ -1,7 +1,7 @@
 import { useLocation } from "wouter"
 import { useState } from "react"
 import { useGifs } from "hooks/useGifs"
-import GifList from 'components/GifList'
+import ListOfGifs from 'components/ListOfGifs'
 import TrendinsSearches from "components/TrendingSearch/TrendingSearches"
 import './Home.css'
 
@@ -26,7 +26,7 @@ function Home () {
                 <input onChange={handleChange} type="text" value={keyword} placeholder="Buscar gifs"/>
             </form>
             <h3 className="recientes">Gifs recientes</h3>
-            <GifList gifs={gifs}/>
+            <ListOfGifs gifs={gifs}/>
             <TrendinsSearches />
         </section>
     )
