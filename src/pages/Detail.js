@@ -10,7 +10,7 @@ export default function Detail({params}){
             <img src={gif.url} alt={gif.title} />
             <div className='info'>
                 <h3>{gif.title}</h3>
-                <input type='text' value={gif.url}/>
+                <input type='text' defaultValue={gif.url}/>
                 <p>{gif.id}</p>
             </div>
         </div>
