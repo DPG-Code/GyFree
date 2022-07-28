@@ -2,7 +2,7 @@
     width: 95%;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-template-rows: masonry; /*Firefox experimental*/
     align-items: center;
     gap: 10px;
