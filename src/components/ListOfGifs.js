@@ -8,7 +8,7 @@ export default function ListOfGifs({gifs}) {
             gifs.map(({id, title, url}) =>
                 <Gif
                     id={id}
-                    key={id}
+                    key={crypto.randomUUID()}
                     title={title}
                     url={url}
                 />

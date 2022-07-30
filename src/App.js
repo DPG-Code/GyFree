@@ -17,7 +17,7 @@ function App() {
           <Link className='home' to="/">Home</Link>
           <GifsContextProvider>
             <Route path="/" component={HomePage} />
-            <Route path="/search/:keyword" component={SearchResults} />
+            <Route path="/search/:keyword/:rating?" component={SearchResults} />
             <Route path="/gif/:id" component={Detail} />
             <Route path="/404" component={Error} />
           </GifsContextProvider>
