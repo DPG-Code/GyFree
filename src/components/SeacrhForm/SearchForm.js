@@ -7,7 +7,7 @@ import useForm from "./useForm"
 const RATINGS = ['g', 'pg', 'pg-13', 'r']
 
 function SearchForm({ initialKeyword = '', initialRating = RATINGS[0] }) {
-    const [path, pushLocation] = useLocation()
+    const [, pushLocation] = useLocation()
 
     const {keyword, rating, times, updateKeyword, updateRating} = useForm({ initialKeyword, initialRating })
 

@@ -23,3 +23,8 @@
   top: 2.5%;
   left: 2.5%;
 }
+
+.btn-register[disable] {
+  opacity: .5;
+  pointer-events: none;
+}

@@ -1,29 +1,38 @@
 import React, {Suspense} from "react";
 import { Link, Route } from "wouter";
+
 import SearchResults from 'components/SearchResults';
-import Detail from './pages/Detail'
+import Header from "components/Header";
+import Detail from 'pages/Detail'
 import Error from "pages/Error";
-import StaticContext from './context/StaticContext';
-import { GifsContextProvider } from './context/GifsContext';
+import LoginPage from "pages/Login";
+import RegisterPage from "pages/Register";
+
+import { UserContextProvider } from "context/UserContext";
+import { GifsContextProvider } from 'context/GifsContext';
+
 import './App.css';
 
 const HomePage = React.lazy(() => import('./pages/Home'))
 
 function App() {
   return (
-    <StaticContext.Provider value={{name : 'Daniel Prieto', suscribe : true}}>
+    <UserContextProvider>
       <Suspense fallback={null}>
         <div className="App">
+          <Header />
           <Link className='home' to="/">Home</Link>
           <GifsContextProvider>
             <Route path="/" component={HomePage} />
             <Route path="/search/:keyword/:rating?" component={SearchResults} />
             <Route path="/gif/:id" component={Detail} />
             <Route path="/404" component={Error} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/register" component={RegisterPage} />
           </GifsContextProvider>
         </div>
       </Suspense>
-    </StaticContext.Provider>
+    </UserContextProvider>
   );
 }
 
