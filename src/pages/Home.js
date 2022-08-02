@@ -15,12 +15,16 @@ function Home () {
                 <meta name="description" content='Home'></meta>
             </Helmet>
             <section className="App-container">
-                <h1>GiFree</h1>
+                <h1 className="title">GiFree</h1>
                 <p className="description">Encontraras gifs de lo que imagines!</p>
                 <SearchForm />
-                <h3 className="recientes">Gifs recientes</h3>
-                <ListOfGifs gifs={gifs}/>
                 <TrendinsSearches />
+                <h3 className="recientes">Gifs recientes</h3>
+                {
+                    loading
+                    ? <p>Loading...</p>
+                    : <ListOfGifs gifs={gifs}/>
+                }
             </section>
         </>
     )

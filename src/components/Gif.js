@@ -5,7 +5,7 @@ import './Gif.css'
 
 function Gif ({title, id, url}) {
     return (
-        <div>
+        <div className='gif-container'>
             <Fav id={id}/>
             <Link className='Gif' to={`/gif/${id}`}>
                 <span>{title}</span>

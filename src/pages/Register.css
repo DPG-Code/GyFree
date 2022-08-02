@@ -1,0 +1,56 @@
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register h2{
+    color: #ffffff;
+    font-size: 3em;
+}
+
+.register form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.username-register, .password-register{
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #000000;
+    border: none;
+    outline: none;
+}
+.register button{
+    margin-top: 15px;
+    padding: 7.5px 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #9F09AC;
+    border: none;
+    cursor: pointer;
+}
+
+.congratulations{
+    margin-top: 50px;
+    color: #ffffff;
+    font-size: 2em;
+    text-align: center;
+}
+
+.error{
+    margin: 0 0 15px 0;
+    color: #ffffff;
+    font-size: .8em;
+    font-weight: 300;
+}
+
+.btn-register[disable] {
+    opacity: .5;
+    pointer-events: none;
+}

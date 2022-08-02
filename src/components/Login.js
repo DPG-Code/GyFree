@@ -21,16 +21,19 @@ export default function Login({ onLogin }) {
     };
 
     return (
-        <div>
-            {isLogindLoading && <p>Checking credentials...</p>}
+        <div className="login">
+            <h2>Login</h2>
+            {isLogindLoading && <p className="ckecking">Checking credentials...</p>}
             {!isLogindLoading &&
                 <form onSubmit={handleSubmit}>
                     <input
+                        className="username-login"
                         onChange={(e) => setUsername(e.target.value)}
                         placeholder="username"
                         value={username}
                     />
                     <input
+                        className="password-login"
                         onChange={(e) => setPassword(e.target.value)}
                         type="password"
                         placeholder="password"
@@ -39,7 +42,8 @@ export default function Login({ onLogin }) {
                     <button>Login</button>
                 </form>
             }
-            {hasLoginError && <p>¡Credentials are invalid!</p>}
+            {hasLoginError && <p className="invalid">¡Credentials are invalid!</p>
+            }
         </div>
     );
 }

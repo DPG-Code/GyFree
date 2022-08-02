@@ -1,5 +1,5 @@
 .gifs{
-    width: 95%;
+    width: 85%;
     min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

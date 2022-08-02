@@ -18,18 +18,30 @@ export default function Register() {
     }
 
     if(registered) {
-        return <h2>Congratulations! You've been successfully registered!</h2>
+        return <h2 className="congratulations">Congratulations! You've been successfully registered!</h2>
     }
 
     return (
-        <>
+        <div className="register">
+            <h2>Register</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input name="username" {...register("username", {required: "Required a username",})} placeholder="username"/>
-                <p>{errors.username && errors.username.message}</p>
-                <input name="password" {...register("password", {required: "Required a password",})} type="password" placeholder="password"/>
-                <p>{errors.password && errors.password.message}</p>
+                <input
+                    className="username-register"
+                    name="username"
+                    {...register("username", {required: "Required a username",})}
+                    placeholder="username"
+                />
+                <p className="error">{errors.username && errors.username.message}</p>
+                <input
+                    className="password-register"
+                    name="password"
+                    {...register("password", {required: "Required a password",})}
+                    type="password"
+                    placeholder="password"
+                />
+                <p className="error">{errors.password && errors.password.message}</p>
                 <button className="btn-register" disabled={isSubmitting}>Register</button>
             </form>
-        </>
+        </div>
     )
 }

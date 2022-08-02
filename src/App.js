@@ -1,5 +1,5 @@
 import React, {Suspense} from "react";
-import { Link, Route } from "wouter";
+import { Route } from "wouter";
 
 import SearchResults from 'components/SearchResults';
 import Header from "components/Header";
@@ -21,7 +21,6 @@ function App() {
       <Suspense fallback={null}>
         <div className="App">
           <Header />
-          <Link className='home' to="/">Home</Link>
           <GifsContextProvider>
             <Route path="/" component={HomePage} />
             <Route path="/search/:keyword/:rating?" component={SearchResults} />

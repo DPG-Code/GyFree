@@ -1,0 +1,28 @@
+.modal{
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    min-height: 565px;
+    position: fixed;
+    display: flex;
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+}
+.modal-content{
+    margin: auto;
+    width: 80%;
+    height: 65%;
+    background-color: #1B1C20;
+}
+.close{
+    font-size: 1.2em;
+    font-weight: 900;
+    background-color: #ffffff5e;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    border: none;
+    cursor: pointer;
+}

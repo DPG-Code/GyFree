@@ -1,5 +1,6 @@
+import {useRoute, Link} from "wouter"
 import useUser from "hooks/useUser"
-const { Link, useRoute } = require("wouter")
+import './Header.css'
 
 export default function Header() {
     const { isLogged, logout } = useUser()
@@ -12,14 +13,14 @@ export default function Header() {
 
     const renderLoginButtons = ({isLogged}) => {
         return isLogged
-            ? <Link to="#" onClick={handleClick}>
+            ? <Link className="register-link" to="#" onClick={handleClick}>
                 Logout
             </Link>
             : <>
-                <Link to='/login'>
+                <Link className="login-link" to='/login'>
                     Login
                 </Link>
-                <Link to='/register'>
+                <Link className="register-link" to='/register'>
                     Register
                 </Link>
             </>
@@ -31,6 +32,7 @@ export default function Header() {
 
     return (
         <header>
+            <Link className='home-link' to="/">Home</Link>
             {content}
         </header>
     )

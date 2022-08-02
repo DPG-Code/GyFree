@@ -3,7 +3,7 @@ import './Category.css'
 
 export default function Category({ name, options = [] }){
     return (
-        <section className='trending-container'>
+        <>
             <h3>{name}</h3>
             <ul>
                 {
@@ -16,6 +16,6 @@ export default function Category({ name, options = [] }){
                 ))
                 }
             </ul>
-        </section>
+        </>
     )
 }
